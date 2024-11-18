@@ -1,28 +1,42 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Comic Sans MS", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
+    background-color: #ffecb3;
+    color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
   }
   
-  #app {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 1rem;
+  #content {
+    max-width: 600px;
+    padding: 20px;
     background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    z-index: 1;
   }
   
-  h1,
-  h2 {
-    color: #5a189a;
+  h1 {
+    font-size: 1.8rem;
+    color: #d32f2f;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
   }
   
   a {
-    color: #1d3557;
+    display: block;
+    margin: 10px 0;
+    color: #1976d2;
     text-decoration: none;
     font-weight: bold;
   }
@@ -30,3 +44,32 @@ body {
   a:hover {
     text-decoration: underline;
   }
+  
+  body::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/8/89/Chaves_hat.png")
+      no-repeat center center;
+    background-size: contain;
+    top: 50px;
+    right: 50px;
+    opacity: 0.2;
+    z-index: 0;
+  }
+  
+  #content::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/8/89/Chaves_hat.png")
+      no-repeat center center;
+    background-size: contain;
+    top: 20px;
+    left: -120px;
+    opacity: 0.2;
+    z-index: -1;
+  }
+  
